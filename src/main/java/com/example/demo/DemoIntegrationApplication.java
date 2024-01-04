@@ -11,10 +11,6 @@ public class DemoIntegrationApplication {
 		
 		System.out.println("Checking integration completed successfully....");
 
-
-
-
-		
 		System.out.println(String.format("Although some issue exist in the code.... Need to be resovled.", args));
 	}
 
