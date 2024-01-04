@@ -12,6 +12,15 @@ public class DemoIntegrationApplication {
 		System.out.println("Checking integration completed successfully....");
 
 		System.out.println(String.format("Although some issue exist in the code.... Need to be resovled.", args));
+		
+		printString("CRM Portal Program");
+	}
+	
+	public static void printString(String str) {
+		
+		if(str != null && str.length()>1) {
+			System.out.println(str);
+		}
 	}
 
 }
