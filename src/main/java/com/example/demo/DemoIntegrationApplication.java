@@ -10,11 +10,8 @@ public class DemoIntegrationApplication {
 		SpringApplication.run(DemoIntegrationApplication.class, args);
 
 		System.out.println("Checking integration completed successfully....");
-
 		printString("CRM Portal Program");
-
 		System.out.println(countNumberOfWord("Checking integration completed successfully...."));
-		
 		System.out.println(countNumberOfWord(null));
 	}
 
