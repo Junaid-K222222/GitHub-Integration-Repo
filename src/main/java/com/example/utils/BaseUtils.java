@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @author Junaid Khan
  *
  */
-@Component
+
 public class BaseUtils {
 
 	public String convertCamelCaseString(String str) {
