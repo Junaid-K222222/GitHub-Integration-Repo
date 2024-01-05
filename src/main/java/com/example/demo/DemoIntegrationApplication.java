@@ -6,15 +6,100 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DemoIntegrationApplication {
 
+	/**
+	 * Main Method For Logics
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
+		
 		SpringApplication.run(DemoIntegrationApplication.class, args);
 
-		System.out.println("Checking integration completed successfully....");
-		printString("CRM Portal Program");
-		System.out.println(countNumberOfWord("Checking integration completed successfully...."));
-		System.out.println(countNumberOfWord(null));
+		// System.out.println("Checking integration completed successfully....");
+		// printString("CRM Portal Program");
+		// System.out.println(countNumberOfWord("Checking integration completed
+		// successfully...."));
+		// System.out.println(countNumberOfWord(null));
+
+		// convertCamelCase("APPLICATION");
+
+		printString("------------------------------------------------------------");
+		System.out.println(convertCamelCaseString("application is now started..."));
+		printString("------------------------------------------------------------");
+
 	}
 
+	/**
+	 * 
+	 * @param str
+	 * @return
+	 */
+	
+	public static String convertCamelCaseString(String str) {
+		StringBuilder newString = new StringBuilder();
+		if (str != null && str.length() > 1) {
+
+			String array[] = str.split(" ");
+			for (int i = 0; i < array.length; i++) {
+				newString.append(makeWordCamelCase(array[i]));
+				newString.append(" ");
+			}
+
+			return newString.toString();
+		}
+
+		return " ";
+		
+	}
+
+	/**
+	 * 
+	 * @param str
+	 * @return
+	 */
+	
+	public static String makeWordCamelCase(String str) {
+
+		if (str != null && str.length() > 1) {
+			int ascii, i = 0;
+			ascii = str.charAt(i) - 32;
+			str = str.replaceFirst(str.charAt(i) + "", ((char) ascii) + "");
+			return str;
+		}
+		
+		return " ";
+	}
+
+	/**
+	 * 
+	 * @param str
+	 * @return
+	 */
+	public static String convertCamelCase(String str) {
+
+		// subtract 32
+		int ascii = 0;
+
+		if (str != null && str.length() > 3) {
+
+			for (int i = 0; i < str.length(); i++) {
+
+				ascii = str.charAt(i);
+//				ascii = ascii - 32;
+				ascii = ascii + 32;
+
+				System.out.print((char) ascii + "==");
+			}
+		}
+
+		return "Invalid String provided";
+	}
+
+	/**
+	 * Used for Print String Pass argument give result
+	 * 
+	 * @param str
+	 */
 	public static void printString(String str) {
 
 		if (str != null && str.length() > 1) {
@@ -22,6 +107,12 @@ public class DemoIntegrationApplication {
 		}
 	}
 
+	/**
+	 * Check Number of words in a string
+	 * 
+	 * @param word
+	 * @return
+	 */
 	public static String countNumberOfWord(String word) {
 
 		int ascii = 0;
@@ -35,11 +126,7 @@ public class DemoIntegrationApplication {
 				if (ascii == 32) {
 					count++;
 				}
-
 			}
-
-			// lst.forEach(s->System.out.print(s));
-
 			return "Word Count :" + count;
 		}
 
