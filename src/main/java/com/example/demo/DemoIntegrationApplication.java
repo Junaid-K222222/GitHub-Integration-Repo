@@ -61,9 +61,7 @@ public class DemoIntegrationApplication {
 	public static String makeWordCamelCase(String str) {
 
 		if (str != null && str.length() > 1) {
-			int ascii, i = 0;
-			ascii = str.charAt(i) - 32;
-			str = str.replaceFirst(str.charAt(i) + "", ((char) ascii) + "");
+			str = str.replaceFirst(str.charAt(0) + "", ((char) (((int)str.charAt(0)) - 32)) + "");
 			return str;
 		}
 		
@@ -77,18 +75,11 @@ public class DemoIntegrationApplication {
 	 */
 	public static String convertCamelCase(String str) {
 
-		// subtract 32
-		int ascii = 0;
-
 		if (str != null && str.length() > 3) {
 
 			for (int i = 0; i < str.length(); i++) {
 
-				ascii = str.charAt(i);
-//				ascii = ascii - 32;
-				ascii = ascii + 32;
-
-				System.out.print((char) ascii + "==");
+				System.out.print((char) ((int)str.charAt(i)) + 32 + "==");
 			}
 		}
 
